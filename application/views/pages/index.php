@@ -4,6 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -49,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="container">   		
 	  <div class="header_top">
 	  	<div class="logo">
-			<a href="<?php echo base_url('/'); ?>"><img src="assets/images/logo.png" alt=""/></a>
+			<a href="<?php echo base_url(); ?>"><img src="assets/images/logo.png" alt=""/></a>
 		</div>
 		<div class="header-bottom-right">
 	       <ul class="icon1 sub-icon1 profile_img">
@@ -107,11 +110,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>
-							   <li><a href="index.html">New Arrivals</a></li>
-							   <li class="active"><a href="sales.html">Sales</a></li> 
-							   <li><a href="sales.html">Collection</a></li> 
-							   <li><a href="about.html">About Us</a></li>
-							   <li><a href="contact.html">Contact</a></li>
+							   <li><a href="">New Arrivals</a></li>
+							   <li class="active"><a href="<?php base_url('/sales/'); ?>">Sales</a></li> 
+							   <li><a href="collection">Collection</a></li> 
+							   <li><a href="aboutus">About Us</a></li>
+							   <li><a href="contact">Contact</a></li>
 						   </ul>
 						</div>
 						<a class="boxclose" id="boxclose"><img src="assets/images/close.png" alt=""/></a>
@@ -172,9 +175,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<ul class="menu1">
 				<li class="item1"><a href="#" class="">What To Buy ?<img class="arrow-img" src="assets/images/arrow.png" alt=""/> </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
-						<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-						<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-						<li class="subitem3"><a href="single.html">Automatic Fails </a></li>
+						<li class="subitem1"><a href="single.html">Season Items</a></li>
+						<li class="subitem2"><a href="single.html">Food </a></li>
+						<li class="subitem3"><a href="single.html">Cooking Utilities</a></li>
+						<li class="subitem3"><a href="single.html">Emergency Medications</a></li>
+						<li class="subitem3"><a href="single.html">Cosmetics</a></li>
 					</ul>
 		         </li>
 			 </ul>
@@ -200,38 +205,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 		<div class="box1">
 			<ul class="box1_list">
-				<li><a href="#">Jeans</a></li>
-				<li><a href="#">Hoodies</a></li>
-				<li><a href="#">Watches</a></li>
-				<li><a href="#">Suits</a></li>
-				<li><a href="#">Ties</a></li>
-				<li><a href="#">Shirts</a></li>
-				<li><a href="#">T-Shirts</a></li>
-				<li><a href="#">Underwear</a></li>
-				<li><a href="#">Accessories</a></li>
-				<li><a href="#">Caps & Hats</a></li>
+				<li><a href="#">Season Items</a></li>
+				<li><a href="#">Food</a></li>
+				<li><a href="#">Cooking Utilities</a></li>
+				<li><a href="#">Emergency Medications</a></li>
+				<li><a href="#">Cosmetics</a></li>
 			</ul>
 		</div>
 		<ul class="box2_list">
 				<li><a href="#">New Arrivals</a></li>
 				<li><a href="#">Sales</a></li>
-				<li><a href="#">Collection '15</a></li>
 				<li><a href="#">Mystery</a></li>
-				<li><a href="#">Story Behind</a></li>
-				<li><a href="#">About US</a></li>
-				<li><a href="#">Contacts</a></li>
 		 </ul>
 		 <ul class="box3_list">
-				<li><a href="#">New Arrivals</a></li>
-				<li><a href="#">Sales</a></li>
-				<li><a href="#">Collection '15</a></li>
-				<li><a href="#">Mystery</a></li>
-				<li><a href="#">Story Behind</a></li>
 				<li><a href="#">About US</a></li>
 				<li><a href="#">Contacts</a></li>
 		 </ul>
 		</div>
 		<div class="col-md-9 content_right">
+		   <!--
 		   <div class="client_box">
 			<ul class="clients">
 				<li><img src="assets/images/c1.png" class="img-responsive" alt=""/></li>
@@ -240,10 +232,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li><img src="assets/images/c4.png" class="img-responsive" alt=""/></li>
 			</ul>
 		   </div>
+		   -->
 		   <div class="content_right-box">
 			<div class="col-md-8">
 			  <div class="grid1">
-			    <h5>Watches</h5>
+			    <h5>Heating Blanket</h5>
    				  <div class="view view-first">
                      <img src="assets/images/pic1.jpg" class="img-responsive" alt=""/>
    				       <a href="single.html"><div class="mask">
@@ -252,10 +245,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h4>Add To Basket</h4>
                       </div></a>
                    </div> 
-               <h6>$499</h6>
+               <h6>199 HKD</h6>
 			  </div>
 			   <div class="grid1 box4">
-			    <h5>T-Shirt with print</h5>
+			    <h5>Black-n-White Slippers</h5>
    				  <div class="view view-first">
                      <img src="assets/images/pic2.jpg" class="img-responsive" alt=""/>
                      <a href="single.html"><div class="mask mask1">
@@ -264,34 +257,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h4>Add To Basket</h4>
                       </div></a>
    				  </div> 
-               <h6>$59</h6>
+               <h6>59 HKD</h6>
 			  </div>
 			</div>
 			<div class="col-md-4">
 			  <a href="single.html"><div class="grid2">
 				  <div class="view view-first">
                      <img src="assets/images/pic3.jpg" class="img-responsive" alt=""/>
-   				      <h5>Cap</h5>
-   				      <h6>$55</h6>
+   				      <h5>Red Pepper Paste</h5>
+   				      <h6>65 HKD</h6>
    			      </div> 
                </a></div>
 			   <a href="single.html"><div class="grid2 span_1">
 				  <div class="view view-first">
                      <img src="assets/images/pic4.jpg" class="img-responsive" alt=""/>
-   				      <h5>Glasses</h5>
-   				      <h6>$244</h6>
+   				      <h5>Korean Shampoo</h5>
+   				      <h6>44 HKD</h6>
    			      </div> 
               </div></a>
               <a href="single.html"> <div class="grid2 span_1">
 				  <div class="view view-first">
                      <img src="assets/images/pic5.jpg" class="img-responsive" alt=""/>
-   				      <h5>Shoes</h5>
-   				        <h6>$199</h6>
+   				      <h5>Emergency Kit</h5>
+   				        <h6>199 HKD</h6>
    			      </div> 
               </div></a>
 			</div>
 			<div class="clearfix"> </div>
 		   </div>
+		   <!--
 		   <div class="box3">
 			   <div class="col-md-4">
 			    <a href="single.html"> <div class="grid3 view view-first">
@@ -310,10 +304,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   </div>
 			   <div class="clearfix"> </div>
 			</div>
+			-->
 			<div class="box4">
 				<div class="col-md-6">
 				 <div class="grid1">
-				    <h5>Shoes</h5>
+				    <h5>UV Block Sleeves</h5>
 	   				  <div class="view view-first">
 	                     <img src="assets/images/pic9.jpg" class="img-responsive" alt=""/>
 	   				       <a href="single.html"><div class="mask mask2">
@@ -322,12 +317,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	                        <h4>Add To Basket</h4>
 	                      </div></a>
 	                   </div> 
-		               <h6>$199</h6>
+		               <h6>19 HKD</h6>
 				  </div>
 				</div>
 				<div class="col-md-6">
 				   <div class="grid1">
-				    <h5>Purse</h5>
+				    <h5>Korean Snack Set</h5>
 	   				  <div class="view view-first">
 	                     <img src="assets/images/pic10.jpg" class="img-responsive" alt=""/>
 	   				       <a href="single.html"><div class="mask mask2">
@@ -336,7 +331,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	                        <h4>Add To Basket</h4>
 	                      </div></a>
 	                   </div> 
-		               <h6>$295</h6>
+		               <h6>95 HKD</h6>
 				  </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -348,7 +343,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="footer">
 	<div class="container">
 		<img src="assets/images/f_logo.png" alt=""/>
-		<p><a href="mailto:info@mycompany.com">info(at)suity.com</a></p>
+		<p><a href="mailto:ksa@gmail.com">ask(at)ksa.com</a></p>
 		<div class="copy">
 			<p>© 2015 All Rights Reseverd Template by <a href="http://w3layouts.com/">W3layouts</a> </p>
 		</div>

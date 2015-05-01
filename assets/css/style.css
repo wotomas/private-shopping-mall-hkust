@@ -21,7 +21,7 @@ body a{
 	-moz-transition: 0.5s all;
 }
 .index-banner {
-  background: url(../images/banner.png) no-repeat center top;
+  background: url(../images/banner.jpg) no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +30,7 @@ body a{
   min-height:1100px;
 }
 .sales {
-  background: url(../images/banner.png) no-repeat center top;
+  background: url(../images/banner.jpg) no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -49,7 +49,7 @@ body a{
 /*-----stat-header----*/
 .logo{
 	float:left;
-	margin-top: 10px;
+	margin-top: 0;
 }
 /*--//header-welcome-note--*/
 .box{
