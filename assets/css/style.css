@@ -30,12 +30,12 @@ body a{
   min-height:1100px;
 }
 .sales {
-  background: url(../images/banner.jpg) no-repeat center top;
+  background: url(../images/banner.jpg) no-repeat center 10px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height:300px;
+  min-height:250px;
 }
 .menu{
 	float:right;
