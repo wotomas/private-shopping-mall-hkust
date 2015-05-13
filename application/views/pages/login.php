@@ -17,17 +17,22 @@
 			  <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
-				<form>
+				
+				<?php echo form_open('verifylogin'); ?>
 				  <div>
 					<span>Email Address<label>*</label></span>
-					<input type="text"> 
+					<input type="text" id="username" name="username" /> 
 				  </div>
 				  <div>
 					<span>Password<label>*</label></span>
-					<input type="text"> 
+					<input type="password" id="password" name="password" /> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
 				  <input type="submit" value="Login">
+				  <br>
+				  <?php 
+				  		echo validation_errors();
+				  ?>
 			    </form>
 			   </div>
 			    <div class="col-md-6 login-left">

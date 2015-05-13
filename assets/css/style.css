@@ -1348,6 +1348,7 @@ p.m_1{
 	font-size: 13px;
 	border: 1px solid #DAD8D8;
 }
+
 .message-fild textarea{
 	height:150px;
 	resize:none;
@@ -1422,7 +1423,28 @@ p.m_1{
 	padding-bottom: 0.2em;
 	display: block;
 }
+.login-right textarea {
+	border: 1px solid #DDDBDB;
+	outline-color:#fb4d01;
+	width: 96%;
+	font-size:0.8125em;
+	padding:10px;
+}
 .login-right input[type="text"] {
+	border: 1px solid #DDDBDB;
+	outline-color:#fb4d01;
+	width: 96%;
+	font-size:0.8125em;
+	padding:10px;
+}
+.login-right div[id="dvPreview"] {
+	border: 1px solid #DDDBDB;
+	outline-color:#fb4d01;
+	width: 82%;
+	font-size:0.8125em;
+	padding:10px;
+}
+.login-right input[type="password"] {
 	border: 1px solid #DDDBDB;
 	outline-color:#fb4d01;
 	width: 96%;

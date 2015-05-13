@@ -66,7 +66,10 @@ $route['register'] = 'main/view/register';
 $route['sales'] = 'main/view/sales';
 
 //route login
-$route['login'] = 'main/view/login';
+$route['login'] = 'login';
+//$route['verifylogin'] = 'verifylogin';
 
 //route aboutus
 $route['aboutus'] = 'main/view/aboutus';
+
+
