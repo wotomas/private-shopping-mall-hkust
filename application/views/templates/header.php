@@ -1,5 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->library('session');
+/**
+if($this->session->logged_in)
+{
+	echo 'logged in!';
+} 
+else 
+{
+	echo '';
+}
+	**/
 ?>
 <!DOCTYPE HTML>
 <!--A Design by W3layouts
@@ -143,7 +154,7 @@ else
 								//$sessionID = session_id();
 								//echo $sessionID;
 								//echo $username;
-								if(isset($username)) {
+								if($this->session->logged_in) {
 									echo '<div class="login_button"><a href="admin/logout">Logout</a></div>';
 								}
 								else {
@@ -164,7 +175,7 @@ else
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>
-							   <li><a href="">New Arrivals</a></li>
+							   <li><a href="">New Arrival</a></li>
 							   <li class="active"><a href="<?php echo base_url('sales'); ?>">Sales</a></li> 
 							   <li><a href="collection">Collection</a></li> 
 							   <li><a href="aboutus">About Us</a></li>
