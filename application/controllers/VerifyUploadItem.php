@@ -17,6 +17,7 @@ class VerifyUploadItem extends CI_Controller {
    $this->form_validation->set_rules('originalPrice', 'originalPrice', 'trim|required');
    $this->form_validation->set_rules('price', 'price', 'trim|required');
    $this->form_validation->set_rules('details', 'details', 'trim|required');
+   $this->form_validation->set_rules('category', 'category', 'trim|required');
    $this->form_validation->set_rules('fileupload', 'fileupload', 'trim|required');
  
    if($this->form_validation->run() == FALSE)
@@ -34,11 +35,54 @@ class VerifyUploadItem extends CI_Controller {
    }
    else
    {
-     //Go to private area
-     redirect('admin', 'refresh');
+	    //Field validation succeeded.  
+		$itemName = $this->input->post('itemName');
+		$originalPrice = $this->input->post('originalPrice');
+		$price = $this->input->post('price');
+		$details = $this->input->post('details');
+		$category = $this->input->post('category');
+		$fileupload = 'admin/'. $this->input->post('fileupload');
+		$currentDate = date('Y-m-d');
+		$show = 'show';
+		
+		$upload_array = array();
+		$upload_array = array(
+         'item_name' => $itemName,
+		 'originalprice' => $originalPrice,
+		 'price' => $price,
+		 'detail' => $details,
+		 'category' => $category,
+		 'thumbnail' => $fileupload,
+		 'upload_date' => $currentDate,
+		 'exposure' => $show
+       );
+	   
+		// *************** //
+		//  Check Results  //
+		// *************** //
+		/**
+		echo $upload_array['itemName'];
+		echo $upload_array['originalPrice'];
+		echo $upload_array['price'];
+		echo $upload_array['details'];
+		echo $upload_array['category'];
+		echo $upload_array['fileupload'];
+		**/
+		
+		//query the database Upload the items to database
+		if($this->item_model->insert($upload_array))
+		{
+			redirect('admin', 'refresh');
+		}
+		else
+		{
+			echo 'too bad!';
+		}
+		
+		
    }
  
- }
+  }
  
 }
 ?>

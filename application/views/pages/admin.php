@@ -24,19 +24,19 @@
 			<div class="col-md-6 login-right">
 				  <div>
 					<span>Item Name<label>*</label></span>
-					<input type="text" id="itemName" name="itemName" /> 
+					<input type="text" id="itemName" name="itemName" value="<?php echo set_value('itemName'); ?>" /> 
 				  </div>
 				  <div>
 					<span>Original Price<label>*</label></span>
-					<input type="text" id="originalPrice" name="originalPrice" /> 
+					<input type="text" id="originalPrice" name="originalPrice" value="<?php echo set_value('originalPrice'); ?>"/> 
 				  </div>
 				  <div>
 					<span>Current Price<label>*</label></span>
-					<input type="text" id="price" name="price" /> 
+					<input type="text" id="price" name="price" value="<?php echo set_value('price'); ?>"/> 
 				  </div>
 				  <div>
 					<span>Details<label>*</label></span>
-					<textarea name="details" form="verifyuploaditem" rows="5">Enter Details Here </textarea>
+					<textarea id="details" name="details" rows="5" value="<?php echo set_value('details'); ?>">Enter Details Here </textarea>
 				  </div>
 				  <br>
 				  <?php echo validation_errors(); ?>
@@ -44,14 +44,14 @@
 			<div class="col-md-6 login-right">
 				 <div>
 					<span>Category<label>*</label></span>
-					<input type="radio" id="category" name="food" value="food" checked /> Food <br />
-					<input type="radio" id="category" name="food" value="drink" /> Drink <br />
-					<input type="radio" id="category" name="food" value="utility" /> Utility <br />
+						<input type="radio" id="category" name="category" value="food" checked /> Food <br />
+						<input type="radio" id="category" name="category" value="drink" /> Drink <br />
+						<input type="radio" id="category" name="category" value="utility" /> Utility <br />
 				 </div>
 				 <br>
 				 <div>
 					<span>Image<label>*</label></span>
-					<input id="fileupload" type="file" multiple="multiple" />
+					<input id="fileupload" name="fileupload" type="file" multiple="multiple" />
 					<hr />
 					<span>Preview<label>*</label></span>
 					<div id="dvPreview">
