@@ -212,7 +212,7 @@ else
 			         <div class="clearfix"></div>		
 		      </div>
 	</div>
-<?php 
+<?php
 if($title == 'Index')
 {
 	echo 	'<div class="wmuSlider example1">
@@ -232,7 +232,7 @@ if($title == 'Index')
 					</div>
 				 </article>
 				</div>
-                  <script src="<?php echo base_url("assets/js/jquery.wmuSlider.js"); ?>"></script> 
+                  <script src="'. base_url("assets/js/jquery.wmuSlider.js") .'"></script> 
 					<script>
        				     $(".example1").wmuSlider();         
    					</script> 	           	      
