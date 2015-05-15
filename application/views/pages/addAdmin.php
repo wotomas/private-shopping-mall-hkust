@@ -14,53 +14,44 @@
                 <div class="clearfix"></div>
 		   </div>
 			<h1>Admin Private Page</h1>
-			<h2>Welcome <?php echo $username; ?>! Add Items to Shopping Mall!</h2>
+			<h2>Welcome! Add New Admins!</h2>
 			<br>
-			
-			<?php
-			echo form_open('verifyuploaditem'); 
-			?>
-			<form>
-			<div class="col-md-6 login-right">
-				  <div>
-					<span>Item Name<label>*</label></span>
-					<input type="text" id="itemName" name="itemName" value="<?php echo set_value('itemName'); ?>" /> 
-				  </div>
-				  <div>
-					<span>Original Price<label>*</label></span>
-					<input type="text" id="originalPrice" name="originalPrice" value="<?php echo set_value('originalPrice'); ?>"/> 
-				  </div>
-				  <div>
-					<span>Current Price<label>*</label></span>
-					<input type="text" id="price" name="price" value="<?php echo set_value('price'); ?>"/> 
-				  </div>
-				  <div>
-					<span>Details<label>*</label></span>
-					<textarea id="details" name="details" rows="5" value="<?php echo set_value('details'); ?>">Enter Details Here </textarea>
-				  </div>
-				  <br>
-				  <?php echo validation_errors(); ?>
-			</div>
-			<div class="col-md-6 login-right">
-				 <div>
-					<span>Category<label>*</label></span>
-						<input type="radio" id="category" name="category" value="food" checked /> Food <br />
-						<input type="radio" id="category" name="category" value="drink" /> Drink <br />
-						<input type="radio" id="category" name="category" value="utility" /> Utility <br />
-				 </div>
-				 <br>
-				 <div>
-					<span>Image<label>*</label></span>
-					<input id="fileupload" name="fileupload" type="file" multiple="multiple" />
-					<hr />
-					<span>Preview<label>*</label></span>
-					<div id="dvPreview">
+			<div class="register">
+				<?php
+				echo form_open('verifyadminadd'); 
+				?>
+				
+				<?php echo validation_errors(); ?>
+				<form>
+				     <div class="register-bottom-grid">
+						    <h3>LOGIN INFORMATION</h3>
+							 <div>
+								<span>Login Username<label>*</label></span>
+								<input type="text" id="adminUsername" name="adminUsername" value="<?php echo set_value('adminUsername'); ?>" />
+							 </div>
+							 <div class="clearfix"> </div>
+								<a class="news-letter" href="#">
+								
+								</a>
+							 <div>
+								<span>Password<label>*</label></span>
+								<input type="password" id="password" name="password" /> 
+							 </div>
+							 <div>
+								<span>Confirm Password<label>*</label></span>
+								<input type="password" id="passwordCheck" name="passwordCheck" /> 
+							 </div>
+							 <div class="clearfix"> </div>
+					 </div>
+					<div class="clearfix"> </div>
+					 
+					<div class="register-but">
+						   <input type="submit" value="submit">
+						   <div class="clearfix"> </div>
 					</div>
-				 </div><br />
-				 <input type="submit" value="Submit">
-				 
-			</div>
-			</form>
+				</form>
+		   </div>
+			
 	    </div>
 	    <div class="clearfix"> </div>   	
     </div>   

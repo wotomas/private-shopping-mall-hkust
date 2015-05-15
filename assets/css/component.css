@@ -84,7 +84,7 @@ background: url(../images/grid_view.png)no-repeat;
 	text-decoration:none;
 }
 .cbp-vm-add:before {
-	margin-right: 5px;
+	margin-right: 1px 1px 0 0;
 }
 /* Common icon styles */
 .cbp-vm-icon:before {

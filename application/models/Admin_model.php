@@ -34,6 +34,7 @@ class Admin_Model extends CI_Model {
 		{
 			$this->$_joinDate = $value;
 		}
+		
 		function login($username, $password)
 		{
 			$this -> db -> select('id, password, join_date');
@@ -47,6 +48,17 @@ class Admin_Model extends CI_Model {
 			if($query -> num_rows() == 1)
 			{
 				return $query->result();
+			}
+			else
+			{
+				return false;
+			}
+		}
+		function register($data)
+		{
+			if($this -> db -> insert('administrators', $data))
+			{
+				return true;
 			}
 			else
 			{
