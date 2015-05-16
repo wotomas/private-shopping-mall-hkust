@@ -17,9 +17,8 @@
 			<h2>Welcome <?php echo $username; ?>! Add Items to Shopping Mall!</h2>
 			<br>
 			
-			<?php
-			echo form_open('verifyuploaditem'); 
-			?>
+			
+			<?php echo form_open_multipart('verifyuploaditem');?>
 			<form>
 			<div class="col-md-6 login-right">
 				  <div>
@@ -51,13 +50,13 @@
 				 <br>
 				 <div>
 					<span>Image<label>*</label></span>
-					<input id="fileupload" name="fileupload" type="file" multiple="multiple" />
+						<input id="fileupload" name="fileupload[]" type="file" multiple="multiple" />
 					<hr />
 					<span>Preview<label>*</label></span>
 					<div id="dvPreview">
 					</div>
 				 </div><br />
-				 <input type="submit" value="Submit">
+				 <input type="submit" value="submit">
 				 
 			</div>
 			</form>

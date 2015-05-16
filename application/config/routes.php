@@ -74,4 +74,4 @@ $route['aboutus'] = 'main/view/aboutus';
 
 //route admin
 $route['manageItems'] = 'admin/manageItems';
-$route['addAdmin'] = 'admin/addAdmin'; 
+$route['addAdmin'] = 'admin/addAdmin';
