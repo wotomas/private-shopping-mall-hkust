@@ -14,6 +14,39 @@ class Item_Model extends CI_Model {
         {
 			parent::__construct();
         }
+		
+		function getAll()
+		{
+			//SELECT * FROM `items` WHERE 1
+			
+			$this -> db -> select('*');
+			$this -> db -> from('items');
+		 
+			$query = $this -> db -> get();
+			$data = array();
+			
+			if ($query->num_rows() > 0)
+			{
+			   foreach ($query->result() as $row)
+			   {
+				  $temp = array(
+					'item_code' => $row->item_code,
+					'category' => $row->category,
+					'item_name' => $row->item_name,
+					'originalprice' => $row->originalprice,
+					'price' => $row->price,
+					'thumbnail' => $row->thumbnail,
+					'detail' => $row->detail,
+					'upload_date' => $row->upload_date,
+					'exposure' => $row->exposure
+					);
+				  $data[] = $temp;
+			   }
+			}
+				
+			
+			return $data;
+		}
 
 		function insert($data)
 		{

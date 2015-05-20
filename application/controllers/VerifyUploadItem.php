@@ -9,7 +9,7 @@ class VerifyUploadItem extends CI_Controller {
 		$userID = $this->session->logged_in;
 		$itemName = $this->input->post('itemName');
 		 //upload config settings
-	   	$config['upload_path'] = './assets/images/' . $userID['username'] . '/' . $itemName;
+	   	$config['upload_path'] = 'assets/images/' . $userID['username'] . '/' . $itemName;
 		if(!is_dir($config['upload_path']))
 		{
 		  mkdir($config['upload_path'],0755,TRUE);
@@ -50,13 +50,17 @@ class VerifyUploadItem extends CI_Controller {
    else
    {
 		$userID = $this->session->logged_in;
+		$upload_data = $this->upload->data();
+		$filename = $upload_data['file_name'];
+		
 	    //Field validation succeeded.  
 		$itemName = $this->input->post('itemName');
 		$originalPrice = $this->input->post('originalPrice');
 		$price = $this->input->post('price');
 		$details = $this->input->post('details');
 		$category = $this->input->post('category');
-		$fileupload = './assets/images/' . $userID['username'] . '/' . $itemName;
+		//$fileupload = './assets/images/' . $userID['username'] . '/' . $itemName;
+		$fileupload = './assets/images/' . $userID['username'] . '/' . $itemName . '/' . $filename;
 		$currentDate = date('Y-m-d');
 		$show = 'show';
 		
@@ -105,6 +109,9 @@ class VerifyUploadItem extends CI_Controller {
 		{
 			$files = $_FILES;
 			$cpt = count($_FILES['fileupload']['name']);
+			$userID = $this->session->logged_in;
+			$itemName = $this->input->post('itemName');
+			
 			for($i=0; $i<$cpt; $i++)
 			{
 				$_FILES['fileupload']['name']= $files['fileupload']['name'][$i];
@@ -112,9 +119,8 @@ class VerifyUploadItem extends CI_Controller {
 				$_FILES['fileupload']['tmp_name']= $files['fileupload']['tmp_name'][$i];
 				$_FILES['fileupload']['error']= $files['fileupload']['error'][$i];
 				$_FILES['fileupload']['size']= $files['fileupload']['size'][$i];   
-				
+								
 				$this->upload->initialize($this->set_upload_options());
-				
 				if ( !$this->upload->do_upload('fileupload'))
 				{
 					// possibly do some clean up ... then throw an error

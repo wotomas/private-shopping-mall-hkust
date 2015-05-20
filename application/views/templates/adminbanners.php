@@ -11,7 +11,7 @@ else
 	<div class="container">
 		<div class="col-md-3">
 			<ul class="menu1">
-				<li class="item1"><a href="#" class="">Functions<img class="arrow-img" src="assets/images/arrow.png" alt=""/> </a>
+				<li class="item1"><a href="#" class="">Admin Functions </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
 						<li class="subitem1"><a href="<?php echo base_url('sales');?>">Add Items</a></li>
 						<li class="subitem2"><a href="<?php echo base_url('manageItems');?>">Manage Items</a></li>

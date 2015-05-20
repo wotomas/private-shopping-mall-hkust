@@ -38,57 +38,49 @@
 					<div class="clearfix"></div>
 					<ul>
 					
-					  <li>
+					<?php
+					$temp = $this->item_model->getAll();
+						foreach($temp as $row) {
+							echo '<li>
 							<a class="cbp-vm-image" href="single">
 							 <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="assets/images/s11.jpg" class="img-responsive" alt=""/>
+									<img src="';
+										echo $row['thumbnail'];
+							echo '" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Korean BBQ Sauce Chicken</p>
+										 <p class="title">';
+										echo $row['item_name'];
+							echo '</p>
 									   </div>
-									   <div class="price">99 HKD</div>
+									   <div class="price">';
+										echo $row['price'];
+							echo '</div>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
 			                     </div>
 		                      </div>
 		                    </a>
-							<div class="cbp-vm-details">
-								Carefully place the chicken pieces in the hot oil. 
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single">Remove</a>
-							<a class="cbp-vm-icon cbp-vm-add" href="single">Edit</a>
-						</li>
+							<div class="cbp-vm-details">';
+										echo $row['detail'];
+							echo '</div>
+								<a class="cbp-vm-icon cbp-vm-add" href="single">Remove</a>
+								<a class="cbp-vm-icon cbp-vm-add" href="single">Edit</a>
+							</li>';
+						}
+					?>
+					  
 						
 						
 						
-						<li class="last">
-							<a class="cbp-vm-image" href="single">
-								<div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="assets/images/s13.jpg" class="img-responsive" alt=""/>
-								    <div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Korean Traditional Chicken</p>
-									   </div>
-									   <div class="price">105 HKD</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-							</a>
-							<div class="cbp-vm-details">
-								Smaller pieces will not take as long. Large pieces may take longer.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single">Remove</a>
-							<a class="cbp-vm-icon cbp-vm-add" href="single">Edit</a>
-						</li>
+						
 					</ul>
 				</div>
+				
+				
 				<link href="assets/css/component.css" rel='stylesheet' type='text/css' />
                 <script src="assets/js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="assets/js/classie1.js" type="text/javascript"></script>
