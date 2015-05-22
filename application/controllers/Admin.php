@@ -69,6 +69,48 @@ class Admin extends CI_Controller {
    }
  }
  
+ function removeitem($id)
+ {
+   if($this->session->logged_in)
+   {		
+		//call item model
+		//remove from model(database)
+		//remove image from disk
+		$this->load->model('item_model','',TRUE);	
+		if($this -> item_model -> remove($id)) {
+			redirect('manageItems', 'refresh');
+		} else {
+			echo 'item delete was not successful';
+		}
+		
+		
+		
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+ }
+ 
+ function edititem($id)
+ {
+   if($this->session->logged_in)
+   {
+	   
+		echo 'not yet implemented editing item<br>';
+		echo 'editing item number: ' . $id;
+		//redirect to editing mode
+		//not implement in phase 1
+		
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect('login', 'refresh');
+   }
+ }
+ 
   function addAdmin()
  {
    if($this->session->logged_in)

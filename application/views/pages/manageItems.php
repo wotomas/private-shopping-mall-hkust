@@ -46,29 +46,27 @@
 							 <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="';
-										echo $row['thumbnail'];
-							echo '" class="img-responsive" alt=""/>
+									<img src="' . $row['thumbnail'] . '" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">';
-										echo $row['item_name'];
-							echo '</p>
+										<font size="6">
+										 <p class="title">'. $row['item_name'] .'</p>
+										</font>
 									   </div>
-									   <div class="price">';
-										echo $row['price'];
-							echo '</div>
+									   <font size="5">
+									   <div class="price">'. $row['price'] .' HKD</div>
+									   </font>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
 			                     </div>
 		                      </div>
 		                    </a>
-							<div class="cbp-vm-details">';
-										echo $row['detail'];
-							echo '</div>
-								<a class="cbp-vm-icon cbp-vm-add" href="single">Remove</a>
-								<a class="cbp-vm-icon cbp-vm-add" href="single">Edit</a>
+							<div class="cbp-vm-details">'. $row['detail'] .'</div>
+								<a class="cbp-vm-icon cbp-vm-add" href="admin/removeitem/'. $row['item_code'] .'">Remove</a>
+								<!--
+								<a class="cbp-vm-icon cbp-vm-add" href="admin/edititem/'. $row['item_code'] .'">Edit</a>
+								-->
 							</li>';
 						}
 					?>

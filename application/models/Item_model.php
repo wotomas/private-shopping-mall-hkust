@@ -48,6 +48,78 @@ class Item_Model extends CI_Model {
 			return $data;
 		}
 
+		
+		function remove($id)
+		{
+			//Select 
+			$this -> db -> select('*');
+			$this -> db -> from('items');
+			$this -> db -> where('item_code', $id);
+			$this -> db -> limit(1);
+		 
+			$query = $this -> db -> get();
+			if ($query->num_rows() > 0)
+			{
+			   foreach ($query->result() as $row)
+			   {
+				  $temp = array(
+					'thumbnail' => $row->thumbnail
+					);
+			   }
+			}
+			
+			
+			$thumbnailPath = $temp['thumbnail'];
+			
+			
+			$pieces = explode('/', $thumbnailPath);
+			$fileName = array_pop($pieces);
+			$path = implode("/",$pieces);
+			
+			
+			//DELETE FROM `items` WHERE `item_code`= $id
+			$data = array(
+				'item_code' => $id
+				);
+			
+			if($this -> db -> delete('items', $data)) {
+					if (is_dir($path) === true)
+					{
+						$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::CHILD_FIRST);
+
+						foreach ($files as $file)
+						{
+							if (in_array($file->getBasename(), array('.', '..')) !== true)
+							{
+								if ($file->isDir() === true)
+								{
+									rmdir($file->getPathName());
+								}
+
+								else if (($file->isFile() === true) || ($file->isLink() === true))
+								{
+									unlink($file->getPathname());
+								}
+							}
+						}
+
+						return rmdir($path);
+					}
+
+					else if ((is_file($path) === true) || (is_link($path) === true))
+					{
+						return unlink($path);
+					}
+					
+					//able to remove from database but can not remove from disk
+					return false;
+			}
+			else {
+				return false;
+			}
+		 
+			
+		}
 		function insert($data)
 		{
 			//get keys from data and inset them to database
