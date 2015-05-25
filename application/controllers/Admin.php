@@ -9,9 +9,9 @@ class Admin extends CI_Controller {
  
  function index()
  {
-   if($this->session->logged_in)
+   if($this->session->logged_in_admin)
    {
-		$session_data = $this->session->logged_in;
+		$session_data = $this->session->logged_in_admin;
 		$this->load->model('item_model','',TRUE);	   
 		
 		$data['username'] = $session_data['username'];
@@ -27,20 +27,21 @@ class Admin extends CI_Controller {
    else
    {
      //If no session, redirect to login page
-     redirect('login', 'refresh');
+     redirect('/', 'refresh');
    }
  }
  
  function logout()
  {
-   $this->session->unset_userdata('logged_in');
+   $this->session->unset_userdata('logged_in_admin');
+   $this->session->unset_userdata('logged_in_user');
    session_destroy();
    redirect('/', 'refresh');
  }
  
  function manageItems()
  {
-   if($this->session->logged_in)
+   if($this->session->logged_in_admin)
    {
 		$session_data = $this->session->logged_in;
 		
@@ -71,7 +72,7 @@ class Admin extends CI_Controller {
  
  function removeitem($id)
  {
-   if($this->session->logged_in)
+   if($this->session->logged_in_admin)
    {		
 		//call item model
 		//remove from model(database)
@@ -95,7 +96,7 @@ class Admin extends CI_Controller {
  
  function edititem($id)
  {
-   if($this->session->logged_in)
+   if($this->session->logged_in_admin)
    {
 	   
 		echo 'not yet implemented editing item<br>';
@@ -113,7 +114,7 @@ class Admin extends CI_Controller {
  
   function addAdmin()
  {
-   if($this->session->logged_in)
+   if($this->session->logged_in_admin)
    {
 		$session_data = $this->session->logged_in;
 		

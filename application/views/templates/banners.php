@@ -61,6 +61,9 @@ else
 		 </ul>
 		</div>
 		<div class="col-md-9 content_right">
+		<div class="client_box">
+			
+		</div>
 		   <!--
 		   <div class="client_box">
 			<ul class="clients">

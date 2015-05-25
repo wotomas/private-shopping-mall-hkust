@@ -10,8 +10,8 @@ class Login extends CI_Controller {
  function index()
  {
 	$this->load->helper(array('form'));
-	if(isset($username)){
-		echo 'user is already logged in';
+	if($this->session->logged_in_user || $this->session->logged_in_admin) {
+		redirect('/', 'refresh');
 	}
 	else {
 		$page = 'login';

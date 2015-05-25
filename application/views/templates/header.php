@@ -118,7 +118,7 @@ else
 								<div class="cart_box">
 							   	 <div class="message">
 							   	     <div class="alert-close"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/1.jpg"); ?>" class="img-responsive" alt=""/></div>
+					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic1.jpg"); ?>" class="img-responsive" alt=""/></div>
 								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
 		                             $12.00</span></div>
 		                              <div class="clearfix"></div>
@@ -127,7 +127,7 @@ else
 	                            <div class="cart_box">
 							   	 <div class="message1">
 							   	     <div class="alert-close1"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/2.jpg"); ?>" class="img-responsive" alt=""/></div>
+					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic2.jpg"); ?>" class="img-responsive" alt=""/></div>
 								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
 		                             $12.00</span></div>
 		                              <div class="clearfix"></div>
@@ -136,7 +136,7 @@ else
 	                            <div class="cart_box1">
 								  <div class="message2">
 							   	     <div class="alert-close2"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/3.jpg"); ?>" class="img-responsive" alt=""/></div>
+					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic3.jpg"); ?>" class="img-responsive" alt=""/></div>
 								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
 		                             $12.00</span></div>
 		                              <div class="clearfix"></div>
@@ -154,7 +154,7 @@ else
 								//$sessionID = session_id();
 								//echo $sessionID;
 								//echo $username;
-								if($this->session->logged_in) {
+								if($this->session->logged_in_user || $this->session->logged_in_admin) {
 									echo '<div class="login_button"><a href="admin/logout">Logout</a></div>';
 								}
 								else {
