@@ -54,6 +54,24 @@ class Admin_Model extends CI_Model {
 				return false;
 			}
 		}
+		function checkID($username)
+		{
+			$this -> db -> select('id, password, join_date');
+			$this -> db -> from('administrators');
+			$this -> db -> where('id', $username);
+			$this -> db -> limit(1);
+		 
+			$query = $this -> db -> get();
+		 
+			if($query -> num_rows() == 1)
+			{
+				return $query->result();
+			}
+			else
+			{
+				return false;
+			}
+		}
 		function register($data)
 		{
 			if($this -> db -> insert('administrators', $data))

@@ -30,6 +30,24 @@ class User_model extends CI_Model {
 				return false;
 			}
 		}
+		function checkID($username)
+		{
+			$this -> db -> select('id, password, first_name, last_name');
+			$this -> db -> from('users');
+			$this -> db -> where('id', $username);
+			$this -> db -> limit(1);
+		 
+			$query = $this -> db -> get();
+		 
+			if($query -> num_rows() == 1)
+			{
+				return $query->result();
+			}
+			else
+			{
+				return false;
+			}
+		}
 		
 		function register($data)
 		{

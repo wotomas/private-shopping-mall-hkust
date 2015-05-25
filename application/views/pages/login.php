@@ -20,7 +20,7 @@
 				
 				<?php echo form_open('verifylogin'); ?>
 				  <div>
-					<span>Email Address<label>*</label></span>
+					<span>Login ID<label>*</label></span>
 					<input type="text" id="username" name="username" /> 
 				  </div>
 				  <div>
