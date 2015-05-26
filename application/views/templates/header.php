@@ -177,9 +177,9 @@ else
 						   <ul>
 							   <li><a href="">New Arrival</a></li>
 							   <li class="active"><a href="<?php echo base_url('sales'); ?>">Sales</a></li> 
-							   <li><a href="collection">Collection</a></li> 
-							   <li><a href="aboutus">About Us</a></li>
-							   <li><a href="contact">Contact</a></li>
+							   <li><a href="/collection">Collection</a></li> 
+							   <li><a href="/aboutus">About Us</a></li>
+							   <li><a href="/contact">Contact</a></li>
 						   </ul>
 						</div>
 						<a class="boxclose" id="boxclose"><img src="<?php echo base_url("assets/images/close.png"); ?>" alt=""/></a>

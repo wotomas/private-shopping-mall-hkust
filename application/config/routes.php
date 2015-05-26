@@ -54,7 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //route single shop
-$route['single'] = 'main/view/single';
+$route['single'] = 'single/view/single';
+$route['single/(:any)/(:num)'] = 'single/show/$1/$2';
 
 //route contact 
 $route['contact'] = 'main/view/contact';

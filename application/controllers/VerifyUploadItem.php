@@ -6,7 +6,7 @@ class VerifyUploadItem extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('item_model','',TRUE);	   
-		$userID = $this->session->logged_in;
+		$userID = $this->session->logged_in_admin;
 		$itemName = $this->input->post('itemName');
 		 //upload config settings
 	   	$config['upload_path'] = 'assets/images/' . $userID['username'] . '/' . $itemName;
@@ -49,7 +49,7 @@ class VerifyUploadItem extends CI_Controller {
    }
    else
    {
-		$userID = $this->session->logged_in;
+		$userID = $this->session->logged_in_admin;
 		$upload_data = $this->upload->data();
 		$filename = $upload_data['file_name'];
 		
@@ -60,7 +60,7 @@ class VerifyUploadItem extends CI_Controller {
 		$details = $this->input->post('details');
 		$category = $this->input->post('category');
 		//$fileupload = './assets/images/' . $userID['username'] . '/' . $itemName;
-		$fileupload = './assets/images/' . $userID['username'] . '/' . $itemName . '/' . $filename;
+		$fileupload = '/assets/images/' . $userID['username'] . '/' . $itemName . '/' . $filename;
 		$currentDate = date('Y-m-d');
 		$show = 'show';
 		
@@ -109,7 +109,7 @@ class VerifyUploadItem extends CI_Controller {
 		{
 			$files = $_FILES;
 			$cpt = count($_FILES['fileupload']['name']);
-			$userID = $this->session->logged_in;
+			$userID = $this->session->logged_in_admin;
 			$itemName = $this->input->post('itemName');
 			
 			for($i=0; $i<$cpt; $i++)
@@ -162,7 +162,7 @@ class VerifyUploadItem extends CI_Controller {
   {   
 //  upload an image options
     $config = array();
-    $userID = $this->session->logged_in;
+    $userID = $this->session->logged_in_admin;
 	$itemName = $this->input->post('itemName');
 		 
 		 //upload config settings
