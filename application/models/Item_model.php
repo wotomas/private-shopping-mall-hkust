@@ -43,8 +43,6 @@ class Item_Model extends CI_Model {
 				  $data[] = $temp;
 			   }
 			}
-				
-			
 			return $data;
 		}
 		
@@ -55,6 +53,40 @@ class Item_Model extends CI_Model {
 			$this -> db -> select('*');
 			$this -> db -> from('items');
 			$this -> db -> where('category', $category);
+		 
+			$query = $this -> db -> get();
+			$data = array();
+			
+			if ($query->num_rows() > 0)
+			{
+			   foreach ($query->result() as $row)
+			   {
+				  $temp = array(
+					'item_code' => $row->item_code,
+					'category' => $row->category,
+					'item_name' => $row->item_name,
+					'originalprice' => $row->originalprice,
+					'price' => $row->price,
+					'thumbnail' => $row->thumbnail,
+					'detail' => $row->detail,
+					'upload_date' => $row->upload_date,
+					'exposure' => $row->exposure
+					);
+				  $data[] = $temp;
+			   }
+			}
+				
+			
+			return $data;
+		}
+		
+		function getFromCode($id)
+		{
+			//SELECT * FROM `items` WHERE 1
+			
+			$this -> db -> select('*');
+			$this -> db -> from('items');
+			$this -> db -> where('item_code', $id);
 		 
 			$query = $this -> db -> get();
 			$data = array();

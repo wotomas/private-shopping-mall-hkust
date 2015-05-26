@@ -69,19 +69,16 @@
 					<li><a href="#">Half/Half Chicken</a></li>
 					-->
 				</ul>
-				
 				<ul class="product-qty">
 				   <span>Quantity:</span>
-				   <select>
-					 <option>1</option>
-					 <option>2</option>
-					 <option>3</option>
-					 <option>4</option>
-					 <option>5</option>
+				   <select name ="quantity">
+						<option value="1" <?php echo set_select('quantity', 'one', TRUE); ?> >1</option>
+						<option value="2" <?php echo set_select('quantity', 'two'); ?> >2</option>
+						<option value="3" <?php echo set_select('quantity', 'three'); ?> >3</option>
 				   </select>
 			    </ul>
 			    <div class="btn_form">
-					<form action="login">
+					<form action="/cart/add/<?php echo $item_code; ?> ">
 						<input type="submit" value="Add to Cart" title="">
 					</form>
 				</div>

@@ -73,6 +73,8 @@ $route['login'] = 'login';
 //route aboutus
 $route['aboutus'] = 'main/view/aboutus';
 
+//route cart
+$route['cart/add/(:num)'] = 'cart/add/$1';
 //route admin
 $route['manageItems'] = 'admin/manageItems';
 $route['addAdmin'] = 'admin/addAdmin';

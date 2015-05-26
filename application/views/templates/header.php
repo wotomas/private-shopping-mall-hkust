@@ -155,10 +155,10 @@ else
 								//echo $sessionID;
 								//echo $username;
 								if($this->session->logged_in_user || $this->session->logged_in_admin) {
-									echo '<div class="login_button"><a href="admin/logout">Logout</a></div>';
+									echo '<div class="login_button"><a href="/admin/logout">Logout</a></div>';
 								}
 								else {
-									echo '<div class="login_button"><a href="login">Login</a></div>';
+									echo '<div class="login_button"><a href="/login">Login</a></div>';
 								}
 								?>
 							  <div class="clearfix"></div>
