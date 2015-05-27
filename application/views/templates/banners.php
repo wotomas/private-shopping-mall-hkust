@@ -13,11 +13,9 @@ else
 			<ul class="menu1">
 				<li class="item1"><a href="#" class="">What To Buy ?<img class="arrow-img" src="/assets/images/arrow.png" alt=""/> </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
-						<li class="subitem1"><a href="<?php echo base_url('sales');?>">Season Items</a></li>
-						<li class="subitem2"><a href="<?php echo base_url('sales');?>">Food</a></li>
-						<li class="subitem3"><a href="<?php echo base_url('sales');?>">Cooking Utilities</a></li>
-						<li class="subitem3"><a href="<?php echo base_url('sales');?>">Emergency Medications</a></li>
-						<li class="subitem3"><a href="<?php echo base_url('sales');?>">Cosmetics</a></li>
+						<li class="subitem2"><a href="<?php echo base_url('sales/food');?>">Food</a></li>
+						<li class="subitem3"><a href="<?php echo base_url('sales/drink');?>">Drink</a></li>
+						<li class="subitem3"><a href="<?php echo base_url('sales/utility');?>">Utilities</a></li>
 					</ul>
 		         </li>
 			 </ul>
@@ -43,11 +41,9 @@ else
 		</script>
 		<div class="box1">
 			<ul class="box1_list">
-				<li><a href="<?php echo base_url('sales');?>">Season Items</a></li>
-				<li><a href="<?php echo base_url('sales');?>">Food</a></li>
-				<li><a href="<?php echo base_url('sales');?>">Cooking Utilities</a></li>
-				<li><a href="<?php echo base_url('sales');?>">Emergency Medications</a></li>
-				<li><a href="<?php echo base_url('sales');?>">Cosmetics</a></li>
+				<li><a href="<?php echo base_url('sales/food');?>">Food</a></li>
+				<li><a href="<?php echo base_url('sales/drink');?>">Drink</a></li>
+				<li><a href="<?php echo base_url('sales/utility');?>">Utilities</a></li>
 			</ul>
 		</div>
 		<ul class="box2_list">

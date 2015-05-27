@@ -64,7 +64,8 @@ $route['contact'] = 'main/view/contact';
 $route['register'] = 'main/view/register';
 
 //route sales
-$route['sales'] = 'main/view/sales';
+$route['sales'] = 'sales';
+$route['sales/(:any)'] = 'sales/view/$1';
 
 //route login
 $route['login'] = 'login';
@@ -75,6 +76,7 @@ $route['aboutus'] = 'main/view/aboutus';
 
 //route cart
 $route['cart/add/(:num)'] = 'cart/add/$1';
+
 //route admin
 $route['manageItems'] = 'admin/manageItems';
 $route['addAdmin'] = 'admin/addAdmin';

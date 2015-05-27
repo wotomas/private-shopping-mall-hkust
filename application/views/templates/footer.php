@@ -1,6 +1,6 @@
 <div class="footer">
 	<div class="container">
-		<img src="assets/images/f_logo.png" alt=""/>
+		<img src="/assets/images/f_logo.png" alt=""/>
 		<p><a href="mailto:ksa@gmail.com">ask(at)ksa.com</a></p>
 		<div class="copy">
 			<p>© 2015 All Rights Reseverd Content Created by <a href="http://ustksa.com">KSA Exco</a> </p>

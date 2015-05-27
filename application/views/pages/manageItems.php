@@ -79,9 +79,9 @@
 				</div>
 				
 				
-				<link href="assets/css/component.css" rel='stylesheet' type='text/css' />
-                <script src="assets/js/cbpViewModeSwitch.js" type="text/javascript"></script>
-                <script src="assets/js/classie1.js" type="text/javascript"></script>
+				<link href="/assets/css/component.css" rel='stylesheet' type='text/css' />
+                <script src="/assets/js/cbpViewModeSwitch.js" type="text/javascript"></script>
+                <script src="/assets/js/classie1.js" type="text/javascript"></script>
 	    </div>
 	    <div class="clearfix"> </div>   	
     </div>   
