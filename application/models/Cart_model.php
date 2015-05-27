@@ -22,6 +22,7 @@ class Cart_Model extends CI_Model {
 			
 			$query = $this -> db -> get();
 			$data = array();
+		
 			
 			if ($query->num_rows() > 0)
 			{
@@ -32,7 +33,9 @@ class Cart_Model extends CI_Model {
 					'cart_user' => $row->cart_user,
 					'cart_item_code' => $row->cart_item_code,
 					'quantity' => $row->quantity,
-					'cart_date' => $row->cart_date
+					'cart_date' => $row->cart_date,
+					'price' => $row->price,
+					'thumbnail' => $row->thumbnail
 					);
 				  $data[] = $temp;
 			   }
@@ -40,6 +43,7 @@ class Cart_Model extends CI_Model {
 				
 			
 			return $data;
+			
 		}
 		
 		function remove($user, $id)

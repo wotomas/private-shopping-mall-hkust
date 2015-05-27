@@ -18,7 +18,18 @@ class Admin extends CI_Controller {
 		$data['join_date'] = $session_data['join_date'];
      	$page = 'admin';
 		$data['title'] = ucfirst($page); // Capitalize the first letter
-
+		if($this->session->logged_in_user) {
+			$session_data = $this->session->logged_in_user;
+			$userID = $session_data['username'];
+			
+			$cart = $this->cart_model->getAll($userID);
+			
+			$data['carts'] = $cart;
+			$data['cartSize'] = count($cart);
+		} else {
+			$data['carts'] = array();
+			$data['cartSize'] = 0;
+		}
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/adminbanners', $data);
 		$this->load->view('pages/'.$page, $data);
@@ -50,9 +61,18 @@ class Admin extends CI_Controller {
 		$this->load->model('item_model','',TRUE);	
 		$temp = $this->item_model->getAll();
 		
-		?><pre><?php
-		print_r($temp);
-		?></pre><?php
+		if($this->session->logged_in_user) {
+			$session_data = $this->session->logged_in_user;
+			$userID = $session_data['username'];
+			
+			$cart = $this->cart_model->getAll($userID);
+			
+			$data['carts'] = $cart;
+			$data['cartSize'] = count($cart);
+		} else {
+			$data['carts'] = array();
+			$data['cartSize'] = 0;
+		}
 		
      	$page = 'manageItems';
 		$data['title'] = ucfirst($page); // Capitalize the first letter
@@ -122,7 +142,18 @@ class Admin extends CI_Controller {
 		$data['join_date'] = $session_data['join_date'];
      	$page = 'addAdmin';
 		$data['title'] = ucfirst($page); // Capitalize the first letter
-
+		if($this->session->logged_in_user) {
+			$session_data = $this->session->logged_in_user;
+			$userID = $session_data['username'];
+			
+			$cart = $this->cart_model->getAll($userID);
+			
+			$data['carts'] = $cart;
+			$data['cartSize'] = count($cart);
+		} else {
+			$data['carts'] = array();
+			$data['cartSize'] = 0;
+		}
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/adminbanners', $data);
 		$this->load->view('pages/'.$page, $data);

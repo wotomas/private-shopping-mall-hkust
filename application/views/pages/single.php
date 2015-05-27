@@ -71,15 +71,17 @@
 				</ul>
 				<ul class="product-qty">
 				   <span>Quantity:</span>
+				   <?php echo form_open('cart/add/'. $item_code); ?>
 				   <select name ="quantity">
 						<option value="1" <?php echo set_select('quantity', 'one', TRUE); ?> >1</option>
 						<option value="2" <?php echo set_select('quantity', 'two'); ?> >2</option>
 						<option value="3" <?php echo set_select('quantity', 'three'); ?> >3</option>
+						<option value="4" <?php echo set_select('quantity', 'four'); ?> >4</option>
+						<option value="5" <?php echo set_select('quantity', 'five'); ?> >5</option>
 				   </select>
 			    </ul>
-			    <div class="btn_form">
-					<form action="/cart/add/<?php echo $item_code; ?> ">
-						<input type="submit" value="Add to Cart" title="">
+					<div class="register-but">
+						<input type="submit" value="Add to Cart">
 					</form>
 				</div>
 			</div>

@@ -309,32 +309,6 @@ a.active-icon.c1:hover {
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
-.alert-close1 {
-  background: url('../images/close1.png') no-repeat 0px 0px;
-  cursor: pointer;
-  height: 22px;
-  width: 22px;
-  position: absolute;
-  right:-10px;
-  top:5px;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-}
-.alert-close2 {
-  background: url('../images/close1.png') no-repeat 0px 0px;
-  cursor: pointer;
-  height: 22px;
-  width: 22px;
-  position: absolute;
-  right:-10px;
-  top:5px;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-}
 .total_left{
 	float:left;
 	font-size:0.85em;

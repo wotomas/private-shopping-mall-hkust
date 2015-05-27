@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->library('session');
-/**
-if($this->session->logged_in)
+$this->load->model('cart_model','',TRUE);
+
+if($this->session->logged_in_user)
 {
-	echo 'logged in!';
+	$session_data = $this->session->logged_in_user;
+	$userID = $session_data['username'];
 } 
 else 
 {
-	echo '';
 }
-	**/
 ?>
 <!DOCTYPE HTML>
 <!--A Design by W3layouts
@@ -33,30 +33,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.1.min.js"); ?>"></script>
-<script>$(document).ready(function(c) {
-	$('.alert-close').on('click', function(c){
-		$('.message').fadeOut('slow', function(c){
-	  		$('.message').remove();
-		});
-	});	  
-});
-</script>
-<script>$(document).ready(function(c) {
-	$('.alert-close1').on('click', function(c){
-		$('.message1').fadeOut('slow', function(c){
-	  		$('.message1').remove();
-		});
-	});	  
-});
-</script>
-<script>$(document).ready(function(c) {
-	$('.alert-close2').on('click', function(c){
-		$('.message2').fadeOut('slow', function(c){
-	  		$('.message2').remove();
-		});
-	});	  
-});
-</script>
+
+
+
 <!----details-product-slider--->
 <!-- Include the Etalage files -->
 <link rel="stylesheet" href="<?php echo base_url("assets/css/etalage.css"); ?>">
@@ -111,42 +90,53 @@ else
 		</div>
 		<div class="header-bottom-right">
 	       <ul class="icon1 sub-icon1 profile_img">
-					 <li><a class="active-icon c1" href="#">My Cart </a><div class="rate">3</div>
+					 <li><a class="active-icon c1" href="#">My Cart </a><div class="rate"><?php echo $cartSize ?></div>
 						<ul class="sub-icon1 list">
-						  <h3>Recently added items(3)</h3>
+						  <h3>Recently added item<?php echo '('. $cartSize .')'; ?></h3>
 						  <div class="shopping_cart">
-								<div class="cart_box">
-							   	 <div class="message">
-							   	     <div class="alert-close"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic1.jpg"); ?>" class="img-responsive" alt=""/></div>
-								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
-		                             $12.00</span></div>
-		                              <div class="clearfix"></div>
-	                              </div>
-	                            </div>
-	                            <div class="cart_box">
-							   	 <div class="message1">
-							   	     <div class="alert-close1"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic2.jpg"); ?>" class="img-responsive" alt=""/></div>
-								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
-		                             $12.00</span></div>
-		                              <div class="clearfix"></div>
-	                              </div>
-	                            </div>
-	                            <div class="cart_box1">
-								  <div class="message2">
-							   	     <div class="alert-close2"> </div> 
-					                <div class="list_img"><img src="<?php echo base_url("assets/images/pic3.jpg"); ?>" class="img-responsive" alt=""/></div>
-								    <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">
-		                             $12.00</span></div>
-		                              <div class="clearfix"></div>
-	                              </div>
-	                            </div>
+								<?php 
+								$number = 0;
+								foreach($carts as $cart) {
+									echo 	'<div class="cart_box">
+												<div class="hidden" id="hidden">'. $cart['cart_code'] .'</div> 
+												<div class="message'. $number .'">
+													<a href="/cart/remove/' .$cart['cart_code'] .'"> <div class="alert-close alert-close'. $number .'"> </div> </a>';
+							
+									echo 	'			<div class="list_img"><img src="'. $cart['thumbnail'] .'" class="img-responsive" alt=""/></div>
+														<div class="list_desc"><h4>Added to Cart: <a href="">'. $cart['cart_date'] .'</a></h4>'. $cart['quantity'] .' x<span class="actual">
+														'. $cart['price'] .'</span></div>
+														<div class="clearfix"></div>
+												</div>
+											</div>';
+											
+									echo '	<script>$(document).ready(function(c) {
+												$(".alert-close'. $number .'").on("click", function(c){
+													$(".message'. $number .'").fadeOut("slow", function(c){
+														$(".message'. $number .'").remove();
+														var myDiv = document.getElementById("totalPrice");
+														var hiddenDiv = document.getElementById("hidden");
+														myDiv.innerHTML = "Changed"';
+									echo '			});
+												});	  
+											});
+											</script>';
+									$number++;
+								}
+								?>
 	                        </div>
 	                        <div class="total">
 	                        	<div class="total_left">CartSubtotal : </div>
-	                        	<div class="total_right">$250.00</div>
-	                        	<div class="clearfix"> </div>
+	                        	<div class="total_right" id="totalPrice">
+								<?php 
+									$totalPrice = 0;
+									foreach($carts as $cart) {
+										$totalPrice += $cart['price'] * $cart['quantity'];
+									}
+									echo $totalPrice;
+								?>
+									
+								</div>
+	                        	<div class="clearfix"></div>
 	                        </div>
                             <div class="login_buttons">
 							  <div class="check_button"><a href="checkout.html">Check out</a></div>

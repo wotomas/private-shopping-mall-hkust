@@ -16,7 +16,18 @@ class Login extends CI_Controller {
 	else {
 		$page = 'login';
 		$data['title'] = ucfirst($page); // Capitalize the first letter
-
+		if($this->session->logged_in_user) {
+			$session_data = $this->session->logged_in_user;
+			$userID = $session_data['username'];
+			
+			$cart = $this->cart_model->getAll($userID);
+			
+			$data['carts'] = $cart;
+			$data['cartSize'] = count($cart);
+		} else {
+			$data['carts'] = array();
+			$data['cartSize'] = 0;
+		}
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/banners', $data);
 		$this->load->view('pages/'.$page, $data);
