@@ -80,3 +80,6 @@ $route['cart/add/(:num)'] = 'cart/add/$1';
 //route admin
 $route['manageItems'] = 'admin/manageItems';
 $route['addAdmin'] = 'admin/addAdmin';
+
+//route order
+$route['order'] = 'order';

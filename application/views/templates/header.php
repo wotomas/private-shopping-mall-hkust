@@ -96,11 +96,12 @@ else
 						  <div class="shopping_cart">
 								<?php 
 								$number = 0;
+								$link = current_url();
 								foreach($carts as $cart) {
 									echo 	'<div class="cart_box">
 												<div class="hidden" id="hidden">'. $cart['cart_code'] .'</div> 
 												<div class="message'. $number .'">
-													<a href="/cart/remove/' .$cart['cart_code'] .'"> <div class="alert-close alert-close'. $number .'"> </div> </a>';
+													<a href="/cart/remove/' .$cart['cart_code'] .'?link='. $link .'"> <div class="alert-close alert-close'. $number .'"> </div> </a>';
 							
 									echo 	'			<div class="list_img"><img src="'. $cart['thumbnail'] .'" class="img-responsive" alt=""/></div>
 														<div class="list_desc"><h4>Added to Cart: <a href="">'. $cart['cart_date'] .'</a></h4>'. $cart['quantity'] .' x<span class="actual">
@@ -132,14 +133,14 @@ else
 									foreach($carts as $cart) {
 										$totalPrice += $cart['price'] * $cart['quantity'];
 									}
-									echo $totalPrice;
+									echo $totalPrice .' HKD';
 								?>
 									
 								</div>
 	                        	<div class="clearfix"></div>
 	                        </div>
                             <div class="login_buttons">
-							  <div class="check_button"><a href="checkout.html">Check out</a></div>
+							  <div class="check_button"><a href="<?php echo base_url("order"); ?>">Place Order</a></div>
 								<?php 
 								//$sessionID = session_id();
 								//echo $sessionID;
@@ -165,11 +166,18 @@ else
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>
-							   <li><a href="">New Arrival</a></li>
-							   <li class="active"><a href="<?php echo base_url('sales'); ?>">Sales</a></li> 
-							   <li><a href="/collection">Collection</a></li> 
-							   <li><a href="/aboutus">About Us</a></li>
-							   <li><a href="/contact">Contact</a></li>
+							   <li class="active"><a href="<?php echo base_url('sales/food'); ?>">Sales</a></li>
+							   <li><a href="<?php echo base_url('aboutus'); ?>">About Us</a></li>
+							   <li><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
+							   <?php
+								if($this->session->logged_in_admin) {
+									echo '<li><a href="'. base_url('admin') .'">Admin</a></li>';
+								} else if($this->session->logged_in_user) {
+									echo '<li><a href="'. base_url('sales/food') .'">New Arrivals</a></li>';
+								} else {
+									echo '<li><a href="'. base_url('register') .'">Register</a></li>';
+								}
+								?>
 						   </ul>
 						</div>
 						<a class="boxclose" id="boxclose"><img src="<?php echo base_url("assets/images/close.png"); ?>" alt=""/></a>

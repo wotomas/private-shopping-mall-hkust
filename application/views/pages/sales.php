@@ -32,10 +32,13 @@
 		            <a href=""><img src="<?php echo base_url("assets/images/arrow2.gif"); ?>" alt="" class="v-middle"></a>
                    </div>
     		     </div>
+				 
     	        <ul class="women_pagenation dc_paginationA dc_paginationA06">
 			     <li><a href="#" class="previous">Page:</a></li>
 			     <li class="active"><a href="#">1</a></li>
+				 <!--
 			     <li><a href="#">2</a></li>
+				 -->
 		  	    </ul>
                 <div class="clearfix"></div>		
 		        </div>		
@@ -60,11 +63,11 @@
 					<div class="clearfix"></div>
 					<ul>
 					  <?php 
-					  
+					  $number = 0;
 					  foreach($items as $item) 
 					  {
 						echo '<li>
-							<a class="cbp-vm-image" href="single">
+							<a class="cbp-vm-image" href="/single/'. $category .'/'. $number .'">
 							 <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
@@ -83,8 +86,9 @@
 							<div class="cbp-vm-details">
 								'. $item['detail'] .'
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single">Add to cart</a>
+							<a class="cbp-vm-icon cbp-vm-add" href="/single/'. $category .'/'. $number .'">Add to cart</a>
 						</li>';
+						$number++;
 					  }
 					  ?>
 					</ul>

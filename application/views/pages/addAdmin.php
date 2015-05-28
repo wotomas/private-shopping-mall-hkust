@@ -9,7 +9,7 @@
                     </li>
                </ul>
                 <ul class="previous">
-                	<li><a href="index.html">Back to Previous Page</a></li>
+                	<li><a href="/">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 		   </div>

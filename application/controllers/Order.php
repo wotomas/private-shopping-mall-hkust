@@ -1,26 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sales extends CI_Controller {
-
-	public function index()
+class Order extends CI_Controller {
+	function __construct()
 	{
-		redirect('sales/food', 'refresh');
+	   parent::__construct();
+	   $this->load->model('item_model','',TRUE);	
+	   $this->load->model('cart_model','',TRUE);
 	}
 	
-	public function view($category = 'food')
+	public function index()
 	{
-		//echo $category;
-		//check category
-		//call from item_model
-		//thumbnail, price, detail, name
-		$this->load->model('item_model','',TRUE);
-		$this->load->model('cart_model','',TRUE);
-		$page = 'sales';
-		$data['category'] = $category;
-		$data['items'] = $this->item_model->getAllFromCategory($category);
-		$data['title'] = ucfirst($page); // Capitalize the first letter
-		
+		$page = 'order';
+		$data['title'] = ucfirst($page);
 		if($this->session->logged_in_user) {
 			$session_data = $this->session->logged_in_user;
 			$userID = $session_data['username'];
@@ -34,12 +26,19 @@ class Sales extends CI_Controller {
 			$data['cartSize'] = 0;
 		}
 		
-		
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/banners', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer', $data);
 		
+	}
+	
+	public function confirm()
+	{
+		//check cart list and redirect to main page when empty
+		//when not empty insert order through order_model
+		//if insert was successful, remove cart with current userID
+		//if all successful, redirect to main page
 	}
 	
 	

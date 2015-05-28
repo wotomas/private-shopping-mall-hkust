@@ -45,21 +45,22 @@ class Single extends CI_Controller {
 		//echo $number;
 
 		
-		/**
-		?><pre><?php
-		$data['title'] = ucfirst('single');
-		print_r($data);
-		?></pre><?php
-		**/
+		
+		
+		
 		
 		$items[] = $this->item_model->getAllFromCategory($category);
 		$arraySize = count($items[0]);
 		if($number >= $arraySize) {
 			show_404();
 		}
-		
+		$data['category'] = $category;
 		$data = $items[0][$number];
-				
+		/**
+		?><pre><?php
+		print_r($data);
+		?></pre><?php	
+		**/
 		if($this->session->logged_in_user) {
 			$session_data = $this->session->logged_in_user;
 			$userID = $session_data['username'];

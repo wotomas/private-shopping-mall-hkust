@@ -47,9 +47,7 @@ else
 			</ul>
 		</div>
 		<ul class="box2_list">
-				<li><a href="#">New Arrivals</a></li>
-				<li><a href="#">Sales</a></li>
-				<li><a href="#">Mystery</a></li>
+				<li><a href="<?php echo base_url('sales'); ?>">New Arrivals</a></li>
 		 </ul>
 		 <ul class="box3_list">
 				<li><a href="<?php echo base_url('aboutus'); ?>">About US</a></li>

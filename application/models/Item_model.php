@@ -148,6 +148,10 @@ class Item_Model extends CI_Model {
 				);
 			
 			if($this -> db -> delete('items', $data)) {
+					$cart_data = array(
+						'cart_item_code' => $id
+					);
+					$this -> db -> delete('cart', $cart_data);
 					if (is_dir($path) === true)
 					{
 						$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::CHILD_FIRST);

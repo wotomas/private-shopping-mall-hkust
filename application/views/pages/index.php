@@ -1,52 +1,52 @@
 		   <div class="content_right-box">
 			<div class="col-md-8">
 			  <div class="grid1">
-			    <h5>Heating Blanket</h5>
-   				  <div class="view view-first">
-                     <img src="assets/images/pic1.jpg" class="img-responsive" alt=""/>
-   				       <a href="<?php echo base_url('single');?>"><div class="mask">
-   			            <h3>Quick Look</h3>
-                        <p>-----Or----</p>
-                        <h4>Add To Basket</h4>
-                      </div></a>
-                   </div> 
-               <h6>199 HKD</h6>
-			  </div>
+				<h5><?php echo $items[0]['item_name']; ?></h5>
+				  <div class="view view-first">
+					 <img src="<?php echo $items[0]['thumbnail']; ?>" class="img-responsive" alt=""/>
+					   <a href="<?php echo base_url('sales/'. $items[0]['category']);?>"><div class="mask">
+						<h3>Quick Look</h3>
+						<p>-----Or----</p>
+						<h4>Add To Basket</h4>
+					  </div></a>
+				   </div> 
+				<h6><?php echo $items[0]['price']; ?> HKD</h6>
+			   </div>
+			  
 			   <div class="grid1 box4">
-			    <h5>Black-n-White Slippers</h5>
+			    <h5><?php echo $items[1]['item_name']; ?></h5>
    				  <div class="view view-first">
-                     <img src="assets/images/pic2.jpg" class="img-responsive" alt=""/>
-                     <a href="<?php echo base_url('single');?>"><div class="mask mask1">
+                     <img src="<?php echo $items[1]['thumbnail']; ?>" class="img-responsive" alt=""/>
+                     <a href="<?php echo base_url('single/'. $items[1]['category']);?>"><div class="mask mask1">
    			            <h3>Quick Look</h3>
                         <p>-----Or----</p>
                         <h4>Add To Basket</h4>
                       </div></a>
    				  </div> 
-               <h6>59 HKD</h6>
+               <h6><?php echo $items[1]['price']; ?> HKD</h6>
 			  </div>
+			  
 			</div>
+			
 			<div class="col-md-4">
-			  <a href="<?php echo base_url('single');?>"><div class="grid2">
-				  <div class="view view-first">
-                     <img src="assets/images/pic3.jpg" class="img-responsive" alt=""/>
-   				      <h5>Red Pepper Paste</h5>
-   				      <h6>65 HKD</h6>
-   			      </div> 
-               </a></div>
-			   <a href="<?php echo base_url('single');?>"><div class="grid2 span_1">
-				  <div class="view view-first">
-                     <img src="assets/images/pic4.jpg" class="img-responsive" alt=""/>
-   				      <h5>Korean Shampoo</h5>
-   				      <h6>44 HKD</h6>
-   			      </div> 
-              </div></a>
-              <a href="<?php echo base_url('single');?>"> <div class="grid2 span_1">
-				  <div class="view view-first">
-                     <img src="assets/images/pic5.jpg" class="img-responsive" alt=""/>
-   				      <h5>Emergency Kit</h5>
-   				        <h6>199 HKD</h6>
-   			      </div> 
-              </div></a>
+			 <?php
+			 $count = 0;
+			 foreach($items as $item){
+				 if($count++ < 2 ){
+					continue;
+				 } else if($count > 6) {
+					break;
+				 } else {
+					 echo '<a href="'. base_url('single/'. $item['category']) .'"><div class="grid2">
+					  <div class="view view-first">
+						 <img src="'. $item['thumbnail'] .'" class="img-responsive" alt=""/>
+						  <h5>'. $item['item_name'] .'</h5>
+						  <h6>'. $item['price'].' HKD</h6>
+					  </div> 
+				   </a></div>';
+				 }
+			 }
+			 ?>
 			</div>
 			<div class="clearfix"> </div>
 		   </div>
@@ -69,7 +69,7 @@
 			   </div>
 			   <div class="clearfix"> </div>
 			</div>
-			-->
+			
 			<div class="box4">
 				<div class="col-md-6">
 				 <div class="grid1">
@@ -101,6 +101,7 @@
 				</div>
 				<div class="clearfix"> </div>
 			</div>
+			-->
 		</div>
 		<div class="clearfix"> </div>
 	</div>

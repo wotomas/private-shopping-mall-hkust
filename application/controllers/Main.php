@@ -8,6 +8,7 @@ class Main extends CI_Controller {
 	public function view($page = 'index')
 	{
 		$this->load->model('cart_model','',TRUE);
+		$this->load->model('item_model','',TRUE);
 		
 		if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
         {
@@ -29,7 +30,24 @@ class Main extends CI_Controller {
 			$data['carts'] = array();
 			$data['cartSize'] = 0;
 		}
-		
+		$items = $this->item_model->getAll();
+		if(count($items) < 2){
+			$items = array(
+					array(
+					'item_name' => 'test',
+					'thumbnail' => 'null',
+					'price' => 0,
+					'category' => 'food'
+					), 
+					array(
+					'item_name' => 'test',
+					'thumbnail' => 'null',
+					'price' => 0,
+					'category' => 'food'
+					)
+					);
+		}
+		$data['items'] = $items;
 		
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/banners', $data);
