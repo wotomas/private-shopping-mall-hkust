@@ -44,6 +44,7 @@ else
 				<li><a href="<?php echo base_url('admin');?>">Add Items</a></li>
 				<li><a href="<?php echo base_url('manageItems');?>">Manage Items</a></li>
 				<li><a href="<?php echo base_url('addAdmin');?>">Add Admin</a></li>
+				<li><a href="<?php echo base_url('manageOrders');?>">Manage Orders</a></li>
 			</ul>
 		</div>
 		</div>

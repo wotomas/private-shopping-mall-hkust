@@ -83,3 +83,6 @@ $route['addAdmin'] = 'admin/addAdmin';
 
 //route order
 $route['order'] = 'order';
+
+//route manageOrders
+$route['manageOrders'] = 'admin/manageOrders';

@@ -8,9 +8,6 @@
                         Admin
                     </li>
                </ul>
-                <ul class="previous">
-                	<li><a href="/">Back to Previous Page</a></li>
-                </ul>
                 <div class="clearfix"></div>
 		   </div>
 			<h1>Admin Private Page</h1>

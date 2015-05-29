@@ -9,6 +9,7 @@ class User_model extends CI_Model {
         public function __construct()
         {
 			parent::__construct();
+			$this->load->library('encrypt');
         }
 		
 		function login($username, $password)
@@ -18,7 +19,7 @@ class User_model extends CI_Model {
 			$this -> db -> where('id', $username);
 			$this -> db -> where('password', $password);
 			$this -> db -> limit(1);
-		 
+			
 			$query = $this -> db -> get();
 		 
 			if($query -> num_rows() == 1)
@@ -29,6 +30,7 @@ class User_model extends CI_Model {
 			{
 				return false;
 			}
+			
 		}
 		function checkID($username)
 		{

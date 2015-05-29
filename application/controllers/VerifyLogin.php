@@ -7,7 +7,6 @@ class VerifyLogin extends CI_Controller {
    parent::__construct();
    $this->load->model('user_model','',TRUE);
    $this->load->model('admin_model','',TRUE);
-   
  }
  
  function index()
@@ -58,7 +57,7 @@ class VerifyLogin extends CI_Controller {
  {
    //Field validation succeeded.  Validate against database
    $username = $this->input->post('username');
- 
+
    //query the database
    $result = $this->user_model->login($username, $password);
  
@@ -100,6 +99,7 @@ class VerifyLogin extends CI_Controller {
 	 }
      
    }
+   
  }
 }
 ?>

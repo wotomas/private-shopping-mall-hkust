@@ -17,7 +17,7 @@
 			    <h5><?php echo $items[1]['item_name']; ?></h5>
    				  <div class="view view-first">
                      <img src="<?php echo $items[1]['thumbnail']; ?>" class="img-responsive" alt=""/>
-                     <a href="<?php echo base_url('single/'. $items[1]['category']);?>"><div class="mask mask1">
+                     <a href="<?php echo base_url('sales/'. $items[1]['category']);?>"><div class="mask mask1">
    			            <h3>Quick Look</h3>
                         <p>-----Or----</p>
                         <h4>Add To Basket</h4>
@@ -37,7 +37,7 @@
 				 } else if($count > 6) {
 					break;
 				 } else {
-					 echo '<a href="'. base_url('single/'. $item['category']) .'"><div class="grid2">
+					 echo '<a href="'. base_url('sales/'. $item['category']) .'"><div class="grid2">
 					  <div class="view view-first">
 						 <img src="'. $item['thumbnail'] .'" class="img-responsive" alt=""/>
 						  <h5>'. $item['item_name'] .'</h5>
