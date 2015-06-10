@@ -12,7 +12,7 @@ class VerifyUploadItem extends CI_Controller {
 	   	$config['upload_path'] = 'assets/images/' . $userID['username'] . '/' . $itemName;
 		if(!is_dir($config['upload_path']))
 		{
-		  mkdir($config['upload_path'],0755,TRUE);
+		  mkdir($config['upload_path'],0775,TRUE);
 		} 
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';

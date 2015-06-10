@@ -20,7 +20,8 @@ class VerifyLogin extends CI_Controller {
    if($this->form_validation->run() == FALSE)
    {
 		//Field validation failed.  User redirected to login page
-		$page = 'login';
+		
+		$page = 'Login';
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		if($this->session->logged_in_user) {
 			$session_data = $this->session->logged_in_user;

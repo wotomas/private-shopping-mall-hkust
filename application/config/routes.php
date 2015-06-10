@@ -69,7 +69,6 @@ $route['sales/(:any)'] = 'sales/view/$1';
 
 //route login
 $route['login'] = 'login';
-//$route['verifylogin'] = 'verifylogin';
 
 //route aboutus
 $route['aboutus'] = 'main/view/aboutus';
