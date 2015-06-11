@@ -90,7 +90,7 @@ else
 		</div>
 		<div class="header-bottom-right">
 	       <ul class="icon1 sub-icon1 profile_img">
-					 <li><a class="active-icon c1" href="#">My Cart </a><div class="rate"><?php echo $cartSize ?></div>
+					 <li><a class="active-icon c1" href="#">My Page </a><div class="rate"><?php echo $cartSize ?></div>
 						<ul class="sub-icon1 list">
 						  <h3>Recently added item<?php echo '('. $cartSize .')'; ?></h3>
 						  <div class="shopping_cart">

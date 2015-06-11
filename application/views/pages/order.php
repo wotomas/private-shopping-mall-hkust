@@ -1,7 +1,7 @@
 		   <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="/" title="Go to Home Page">Home</a>
+                       <a href="<?php echo base_url(); ?>" title="Go to Home Page">Home</a>
                        <span>&gt;</span>	
                     </li>
                     <li class="women">

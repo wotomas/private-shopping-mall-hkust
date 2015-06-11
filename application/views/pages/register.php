@@ -1,7 +1,7 @@
 		   <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="<?php echo base_url(); ?>" title="Go to Home Page">Home</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">
@@ -9,14 +9,13 @@
                     </li>
                </ul>
                 <ul class="previous">
-                	<li><a href="index.html">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 		   </div>
 		   
 			  
 		   <div class="register">
-		  	  <?php echo form_open('VerifyNormalRegister'); ?>
+		  	  <?php echo form_open('verifynormalregister'); ?>
 			  <?php echo validation_errors(); ?>
 			  <hr>
 				 <div class="register-top-grid">
